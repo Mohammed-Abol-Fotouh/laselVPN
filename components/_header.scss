@@ -1,0 +1,27 @@
+.header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--padding) 0;
+
+	.burger-menu__checkbox {
+		display: none;
+	}
+
+	& .nav {
+		display: flex;
+		gap: var(--padding);
+		color: var(--color-text);
+	}
+
+	& .sign {
+		display: flex;
+		gap: var(--padding);
+
+		& .sign-in {
+			font-weight: var(--font-weight-medium);
+			align-self: center;
+		}
+	}
+}

@@ -1,0 +1,56 @@
+.subscribe {
+	justify-items: end;
+	padding: 6rem 7rem;
+	background-color: var(--color-white);
+	border-radius: var(--border-radius);
+	box-shadow: 0px 5rem 5rem -1.5rem rgba(0, 0, 0, 0.1);
+
+	& .section__description {
+		width: 41rem;
+		margin-right: auto;
+		gap: var(--gutter);
+	}
+
+	& .button__action {
+		align-self: center;
+	}
+}
+
+@import "./mixins";
+.footer {
+	position: relative;
+	grid-template-columns: repeat(5, 1fr);
+	align-items: start;
+	padding-top: 12rem;
+	margin-top: -6rem;
+
+	&::before {
+		content: "";
+		background-color: var(--color-background);
+		position: absolute;
+		@include widthAndHeight(100vw, 100%);
+		justify-self: center;
+		z-index: -1;
+	}
+
+	& .contact {
+		grid-column: 1/3;
+		display: flex;
+		flex-direction: column;
+		gap: calc(var(--gutter) + 1rem);
+
+		& .social {
+			display: flex;
+			align-items: center;
+			gap: var(--gutter);
+		}
+	}
+
+	& .product,
+	.engage,
+	.earn {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gutter);
+	}
+}

@@ -1,0 +1,147 @@
+@import "./mixins";
+
+@media (max-width: 1000px) {
+	html {
+		font-size: 8px;
+	}
+}
+
+@media (max-width: 800px) {
+	.button__action {
+		align-self: center;
+	}
+
+	.nav,
+	.sign {
+		gap: var(--gutter);
+	}
+
+	.section {
+		grid-template-columns: 1fr;
+		justify-items: center;
+		padding: calc(var(--gutter) * 3) 0;
+
+		&__description {
+			text-align: center;
+			align-items: center;
+		}
+
+		&__image {
+			width: 50%;
+		}
+	}
+
+	.section__list {
+		width: fit-content;
+	}
+
+	.features {
+		gap: var(--padding);
+	}
+
+	.pricing .plans {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.location {
+		gap: var(--padding);
+
+		&-img {
+			width: 75%;
+		}
+	}
+
+	.sponsers-img {
+		width: 100%;
+	}
+
+	.testimonials .cards {
+		grid-template-columns: 1fr;
+	}
+
+	.navigation {
+		width: 100%;
+	}
+}
+
+@media (max-width: 500px) {
+	.container {
+		padding: 0 var(--gutter);
+	}
+
+	.header {
+		padding: var(--gutter) 0;
+	}
+
+	.burger-menu {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		justify-content: center;
+		cursor: pointer;
+		z-index: 1;
+	}
+
+	.burger-menu__bar {
+		@include widthAndHeight(4.375rem, 0.3rem);
+		background-color: var(--color-text);
+		transition: var(--transition-timing);
+	}
+
+	.header:has(.burger-menu__checkbox:checked) .burger-menu__bar:nth-child(1) {
+		transform: translateY(10px) rotate(40deg);
+	}
+
+	.header:has(.burger-menu__checkbox:checked) .burger-menu__bar:nth-child(2) {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.header:has(.burger-menu__checkbox:checked) .burger-menu__bar:nth-child(3) {
+		transform: translateY(-7px) rotate(-40deg);
+	}
+
+	.nav {
+		position: absolute;
+		top: -100%;
+		transform: translateX(-50%);
+		left: 50%;
+		justify-content: space-between;
+		background-color: var(--color-background);
+		width: 100vw;
+		z-index: -1;
+		transition: var(--transition-timing);
+	}
+
+	.header:has(.burger-menu__checkbox:checked) .nav {
+		font-size: var(--font-size-18);
+		top: 100%;
+		padding: var(--gutter);
+		border-bottom: 0.2rem solid var(--color-main-red);
+		z-index: 1;
+	}
+
+	.pricing .plans {
+		grid-template-columns: 1fr;
+	}
+
+	.subscribe {
+		text-align: center;
+		justify-items: center;
+		padding: var(--padding) 0;
+
+		& .section__description {
+			width: 100%;
+		}
+	}
+
+	.footer {
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: start;
+		padding-top: 12rem;
+
+		& .contact {
+			grid-column: 1/1;
+		}
+	}
+}

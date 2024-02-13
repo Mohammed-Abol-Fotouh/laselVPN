@@ -1,0 +1,65 @@
+@import "mixins";
+
+.pricing {
+	position: relative;
+	text-align: center;
+	grid-template-columns: 1fr;
+
+	&::before {
+		content: "";
+		background-color: var(--color-background);
+		position: absolute;
+		@include widthAndHeight(100vw, 100%);
+		justify-self: center;
+		z-index: -1;
+	}
+
+	& .plans {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--padding);
+
+		& .plan {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: calc(var(--padding) + 1rem);
+			padding: calc(var(--padding) * 2) var(--padding) var(--padding)
+				var(--padding);
+			background-color: var(--color-white);
+			border-radius: var(--border-radius);
+			border: 0.2rem solid var(--color-border);
+
+			&:last-of-type {
+				border: 0.2rem solid var(--color-main-red);
+			}
+
+			& .top {
+				display: flex;
+				flex-direction: column;
+				gap: var(--padding);
+				align-items: center;
+			}
+
+			& .bottom {
+				align-items: end;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: var(--gutter);
+			}
+
+			& .plan_button {
+				padding: 1.5rem calc(var(--padding) + var(--gutter));
+				font-weight: var(--font-weight-extra-bold);
+				color: var(--color-main-red);
+			}
+
+			& .button-premium {
+				background-color: var(--color-main-red);
+				color: var(--color-white);
+				box-shadow: 0 1.2rem 1.15rem var(--color-shadow-red);
+			}
+		}
+	}
+}

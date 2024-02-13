@@ -1,0 +1,10 @@
+.location {
+	text-align: center;
+	grid-template-columns: 1fr;
+	gap: calc(var(--padding) * 4);
+	padding-bottom: var(--padding);
+
+	&-img {
+		width: 100%;
+	}
+}

@@ -1,0 +1,97 @@
+@import "./mixins";
+.testimonials {
+	text-align: center;
+	grid-template-columns: 1fr;
+	row-gap: calc(var(--padding) + 2rem);
+
+	& .cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--padding);
+		text-align: start;
+
+		& .card {
+			display: flex;
+			flex-direction: column;
+			gap: 0.8rem;
+			padding: calc(var(--gutter) + 1rem);
+			background-color: var(--color-white);
+			border-radius: var(--border-radius);
+			border: 0.2rem solid var(--color-border);
+
+			&:first-of-type {
+				border: 0.2rem solid var(--color-main-red);
+			}
+
+			& .top {
+				display: flex;
+				justify-content: space-between;
+				gap: var(--padding);
+				align-items: center;
+			}
+
+			&__title {
+				display: flex;
+				align-items: center;
+				gap: var(--gutter);
+				& .card__img {
+					@include widthAndHeight(5rem, 5rem);
+					border-radius: 50%;
+				}
+			}
+
+			&__rating {
+				display: flex;
+				gap: calc(var(--gutter) / 2);
+			}
+
+			&__details {
+				line-height: 2;
+				color: var(--color-heading);
+			}
+		}
+	}
+
+	& .navigation {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		& .dots {
+			display: flex;
+			gap: 1.5rem;
+		}
+
+		& .dot {
+			@include widthAndHeight(1.5rem, 1.5rem);
+			background-color: var(--color-border);
+			border-radius: 50%;
+		}
+
+		& .active {
+			background-color: var(--color-main-red);
+			width: 4.5rem;
+			border-radius: var(--border-radius);
+		}
+
+		& .arrows {
+			display: flex;
+			align-items: center;
+			gap: var(--gutter);
+			margin-right: calc(var(--padding) * 2);
+		}
+
+		& .arrow {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@include widthAndHeight(6rem, 6rem);
+			border: 0.2rem solid var(--color-main-red);
+			border-radius: 50%;
+
+			&-right {
+				background-color: var(--color-main-red);
+			}
+		}
+	}
+}

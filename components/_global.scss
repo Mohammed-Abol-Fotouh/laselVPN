@@ -1,0 +1,60 @@
+@import "./mixins";
+
+.container {
+	max-width: var(--container-width);
+	width: 100%;
+	display: grid;
+	margin: 0 auto;
+	padding: 0 var(--padding);
+}
+
+.container:has(#about:target) .nav-about,
+.container:has(#features:target) .nav-features,
+.container:has(#pricing:target) .nav-pricing,
+.container:has(#testimonials:target) .nav-testimonials,
+.container:has(#help:target) .nav-help {
+	color: var(--color-main-red);
+	font-weight: var(--font-weight-bold);
+	text-decoration: underline;
+}
+
+.heading-primary {
+	@include font(var(--font-size-46), var(--font-weight-semi-bold));
+	& .heading-name {
+		@include font(var(--font-size-50), var(--font-weight-bold));
+	}
+}
+
+.heading-secondary {
+	@include font(var(--font-size-38), var(--font-weight-semi-bold));
+}
+
+.heading-tertiary {
+	@include font(var(--font-size-24), var(--font-weight-medium));
+	& span {
+		color: var(--color-text);
+		font-weight: var(--font-weight-regular);
+	}
+}
+.heading-quaternary {
+	@include font(var(--font-size-18), var(--font-weight-medium));
+}
+
+.button {
+	display: inline-block;
+	border: 0.2rem solid var(--color-main-red);
+	border-radius: var(--padding);
+	@include font(var(--font-size-16), var(--font-weight-semi-bold));
+	padding: 1.5rem var(--padding);
+}
+
+.button__action {
+	display: inline-block;
+	align-self: start;
+	color: var(--color-white);
+	background-color: var(--color-main-red);
+	border-radius: var(--border-radius);
+	@include font(var(--font-size-16), var(--font-weight-bold));
+	padding: var(--gutter) calc(var(--padding) * 2);
+	box-shadow: 0 1.2rem 1.15rem var(--color-shadow-red);
+}
