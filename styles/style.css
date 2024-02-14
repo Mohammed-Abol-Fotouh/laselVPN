@@ -511,6 +511,14 @@ body {
   .navigation {
     width: 100%;
   }
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    padding-top: 12rem;
+  }
+  .footer .contact {
+    grid-column: 1/1;
+  }
 }
 @media (max-width: 500px) {
   .container {
