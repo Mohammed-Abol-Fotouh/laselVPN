@@ -21,7 +21,7 @@ This is a solution of - Almdrsa - laselVPN Landing Page final project in fornten
 ### Links
 
 - Solution URL: [https://github.com/Mohammed-Abol-Fotouh/laselVPN](https://github.com/Mohammed-Abol-Fotouh/laselVPN)
-- Live Site URL: [https://mohammed-abol-fotouh.github.io/quran-tab-landing-page/](https://mohammed-abol-fotouh.github.io/quran-tab-landing-page/)
+- Live Site URL: [https://mohammed-abol-fotouh.github.io/laselVPN/](https://mohammed-abol-fotouh.github.io/laselVPN/)
 
 ## My process
 
